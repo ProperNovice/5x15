@@ -14,25 +14,35 @@ public enum Model {
 
 		getListsManager().listNumberTiles.loadOriginal();
 
-		ArrayList<BoardPosition> listBoardPositions = new ArrayList<>();
+		ArrayList<BoardPosition> listBoardPositionsFirst = new ArrayList<>();
+		ArrayList<BoardPosition> listBoardPositionsNonFirst = new ArrayList<>();
 
 		for (int counter = 0; counter < 5; counter++) {
 
 			ArrayList<BoardPosition> boardPositionTemp = getListsManager().boardPositions
 					.getValue(counter).clone();
 
-			boardPositionTemp.removeFirst();
-			listBoardPositions.addAllLast(boardPositionTemp);
+			listBoardPositionsFirst.addLast(boardPositionTemp.removeFirst());
+			listBoardPositionsNonFirst.addAllLast(boardPositionTemp);
 
 		}
 
 		while (!getListsManager().listNumberTiles.isEmpty()) {
 
-			BoardPosition boardPosition = listBoardPositions.removeRandom();
+			ArrayList<BoardPosition> list = null;
+
 			NumberTile numberTile = getListsManager().listNumberTiles.removeRandom();
-			boardPosition.setNumberTileRelocate(numberTile);
+
+			if (numberTile.getNumber() == 1)
+				list = listBoardPositionsFirst;
+			else
+				list = listBoardPositionsNonFirst;
+
+			list.removeRandom().setNumberTileRelocate(numberTile);
 
 		}
+
+		// replace aces
 
 	}
 
