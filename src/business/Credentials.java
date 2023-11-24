@@ -7,13 +7,16 @@ public enum Credentials {
 
 	INSTANCE;
 
-	public String primaryStageTitle = "JavaFX", numbersImageViewColor = "black";
+	public String primaryStageTitle = "5x15", numbersImageViewColor = "black";
 	public boolean colliderVisibility = true;
 	public double stagePixesOnTheLeft = 180, gapBetweenBorders = 25, textHeight = 50,
 			selectEventHandlerAbleDimension = 100, animationStep = 4, cameraViewSpots = 1;
 	public Vector2 dFrame, dGapBetweenComponents, dCameraView, dGapBetweenComponentsLineCast;
 	public Vector2 cTextPanel, cImageViewClone;
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
+
+	public Vector2 dNumberTile;
+	public Vector2 cRowFirst;
 
 	private Credentials() {
 
@@ -44,6 +47,22 @@ public enum Credentials {
 		x = this.gapBetweenBorders;
 		y = this.gapBetweenBorders;
 		this.cImageViewClone = new Vector2(x, y);
+
+		// d number tile
+
+		x = this.dFrame.x;
+		x -= 2 * this.gapBetweenBorders;
+		x -= 15 * this.dGapBetweenComponents.x;
+		x /= 16;
+		this.dNumberTile = new Vector2(x, x);
+
+		// c row first
+
+		x = this.gapBetweenBorders;
+		x += this.dNumberTile.x / 2;
+		y = this.gapBetweenBorders;
+		y += this.dNumberTile.y / 2;
+		this.cRowFirst = new Vector2(x, y);
 
 	}
 

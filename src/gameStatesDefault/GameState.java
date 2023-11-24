@@ -4,6 +4,8 @@ import business.Credentials;
 import business.ListsManager;
 import enums.EText;
 import javafx.scene.input.KeyCode;
+import models.NumberTile;
+import models.BoardPosition;
 import utils.ArrayList;
 import utils.CameraView;
 import utils.Flow;
@@ -85,6 +87,14 @@ public abstract class GameState {
 
 	protected final SelectImageViewManager getSelectImageViewManager() {
 		return SelectImageViewManager.INSTANCE;
+	}
+
+	public final void handleNumberTilePressed(NumberTile numberTile) {
+
+	}
+
+	public final void handlePositionPressed(BoardPosition position) {
+
 	}
 
 }
