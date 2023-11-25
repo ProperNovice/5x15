@@ -37,6 +37,7 @@ public class NumberTile implements IImageViewAble {
 		Logger.INSTANCE.log(this.getClass().getSimpleName());
 		Logger.INSTANCE.log(this.eColor + " - " + this.number);
 		Logger.INSTANCE.log("*/");
+		Logger.INSTANCE.newLine();
 
 		Flow.INSTANCE.getGameStateCurrent().handleNumberTilePressed(this);
 
