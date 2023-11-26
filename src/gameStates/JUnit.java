@@ -10,6 +10,9 @@ public class JUnit extends GameState {
 
 		Model.INSTANCE.setUpBoard();
 
+		getFlow().addFirst(SelectNumberTileToMove.class);
+		proceedToNextGameState();
+
 	}
 
 }

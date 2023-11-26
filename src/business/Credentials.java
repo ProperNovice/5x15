@@ -56,6 +56,13 @@ public enum Credentials {
 		x /= 16;
 		this.dNumberTile = new Vector2(x, x);
 
+		// d frame
+
+		y = 2 * this.gapBetweenBorders;
+		y += 5 * this.dNumberTile.y;
+		y += 4 * this.dGapBetweenComponents.y;
+		this.dFrame.y = y;
+
 		// c row first
 
 		x = this.gapBetweenBorders;

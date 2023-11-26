@@ -22,7 +22,7 @@ public enum ListsManager {
 
 		// positions
 
-		for (int counter = 0; counter < 5; counter++) {
+		for (int row = 0; row < 5; row++) {
 
 			ArrayList<BoardPosition> boardPosition = new ArrayList<>();
 
@@ -36,7 +36,7 @@ public enum ListsManager {
 
 			}
 
-			this.boardPositions.put(counter, boardPosition);
+			this.boardPositions.put(row, boardPosition);
 
 			vector2.y += Credentials.INSTANCE.dNumberTile.y;
 			vector2.y += Credentials.INSTANCE.dGapBetweenComponents.y;
